@@ -22,6 +22,6 @@ RUN apt-get update \
        && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
 
 
-WORKDIR /app
+WORKDIR /opt/project
 
 ENTRYPOINT ["/root/.composer/vendor/bin/phpunit"]
