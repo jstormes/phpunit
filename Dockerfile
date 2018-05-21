@@ -1,7 +1,7 @@
 # This is a convenience container for local workstation development
 #
 #
-FROM php:7
+FROM php:5
 MAINTAINER James Stormes <jstormes@stormes.net>
 
 RUN apt-get update \
@@ -16,7 +16,7 @@ RUN apt-get update \
         phploc/phploc \
         phpmd/phpmd \
         squizlabs/php_codesniffer \
-    && yes | pecl install xdebug \
+    && yes | pecl install xdebug-2.5.5 \
        && echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > /usr/local/etc/php/conf.d/xdebug.ini \
        && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
        && echo "xdebug.remote_autostart=off" >> /usr/local/etc/php/conf.d/xdebug.ini
