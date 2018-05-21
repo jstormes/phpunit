@@ -24,4 +24,4 @@ RUN apt-get update \
 
 WORKDIR /opt/project
 
-ENTRYPOINT ["/root/.composer/vendor/bin/phpunit"]
+ENTRYPOINT ["/opt/project/vendor/bin/phpunit"]
